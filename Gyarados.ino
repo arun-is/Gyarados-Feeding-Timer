@@ -45,7 +45,7 @@ void printTime() {
   if(hours > 23) {
     lcd.print("Feed me!      ");
   } else {
-    lcd.print("Don't feed Me!");
+    lcd.print("Don't feed me!");
   }
   lcd.setCursor(0,2);
   lcd.print("I was last fed");
@@ -59,19 +59,19 @@ void printTime() {
     lcd.print(days);
     lcd.print(" day");
   } else if(hours > 0) {
-    number = days;
+    number = hours;
     lcd.print(hours);
     lcd.print(" hour");
   } else if(minutes > 0) {
-    number = days;
+    number = minutes;
     lcd.print(minutes);
     lcd.print(" minute");
   } else if(seconds > 0) {
-    number = days;
+    number = seconds;
     lcd.print(seconds);
     lcd.print(" second");
   }
-  if(number == 1) {
+  if(number > 1) {
     lcd.print("s");
   }
   lcd.print(" ");
