@@ -43,28 +43,39 @@ void printTime() {
   
   lcd.setCursor(0,0);
   if(hours > 23) {
-    lcd.print("Feed Me!      ");
+    lcd.print("Feed me!      ");
   } else {
-    lcd.print("Don't Feed Me!");
+    lcd.print("Don't feed Me!");
   }
   lcd.setCursor(0,2);
-  lcd.print("I was fed");
+  lcd.print("I was last fed");
   lcd.setCursor(0,3);
   
+  //handle plural
+  int number = 0;
+  
   if(days > 0) {
+    number = days;
     lcd.print(days);
-    lcd.print(" days");
+    lcd.print(" day");
   } else if(hours > 0) {
+    number = days;
     lcd.print(hours);
-    lcd.print(" hours");
+    lcd.print(" hour");
   } else if(minutes > 0) {
+    number = days;
     lcd.print(minutes);
-    lcd.print(" minutes");
+    lcd.print(" minute");
   } else if(seconds > 0) {
+    number = days;
     lcd.print(seconds);
-    lcd.print(" seconds");
+    lcd.print(" second");
   }
-  lcd.print(" ago      ");
+  if(number == 1) {
+    lcd.print("s");
+  }
+  lcd.print(" ");
+  lcd.print("ago      ");
   
 }
 
